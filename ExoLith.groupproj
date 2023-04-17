@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{40EE2905-C384-4770-B2DD-904A2ECB714C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ExoLithos.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ExoLithos">
+        <MSBuild Projects="ExoLithos.cbproj"/>
+    </Target>
+    <Target Name="ExoLithos:Clean">
+        <MSBuild Projects="ExoLithos.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExoLithos:Make">
+        <MSBuild Projects="ExoLithos.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ExoLithos"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ExoLithos:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ExoLithos:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
