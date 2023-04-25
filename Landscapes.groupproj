@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{40EE2905-C384-4770-B2DD-904A2ECB714C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Landscape.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Landscape">
+        <MSBuild Projects="Landscape.cbproj"/>
+    </Target>
+    <Target Name="Landscape:Clean">
+        <MSBuild Projects="Landscape.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Landscape:Make">
+        <MSBuild Projects="Landscape.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Landscape"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Landscape:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Landscape:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
