@@ -64,7 +64,7 @@ object Form1: TForm1
         end>
       Stars = <>
       Options = [sdoTwinkle]
-      object SPMoon: TGLSprite
+      object SpriteMoon: TGLSprite
         Material.FrontProperties.Ambient.Color = {0000000000000000000000000000803F}
         Material.FrontProperties.Diffuse.Color = {0000000000000000000000000000803F}
         Material.FrontProperties.Emission.Color = {0000803F0000803F0000803F0000803F}
@@ -80,7 +80,7 @@ object Form1: TForm1
         Height = 30.000000000000000000
         Rotation = 0.000000000000000000
       end
-      object SPSun: TGLSprite
+      object SpriteSun: TGLSprite
         Material.FrontProperties.Ambient.Color = {0000000000000000000000000000803F}
         Material.FrontProperties.Diffuse.Color = {0000000000000000000000000000803F}
         Material.BlendingMode = bmAdditive

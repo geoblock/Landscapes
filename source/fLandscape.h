@@ -49,8 +49,8 @@ __published:                   // IDE-managed Components
   TGLBitmapFont *BitmapFont1;
   TGLHUDText *HUDText1;
   TGLSkyDome *SkyDome1;
-  TGLSprite *SPMoon;
-  TGLSprite *SPSun;
+	TGLSprite *SpriteMoon;
+	TGLSprite *SpriteSun;
   TGLDummyCube *DCSound;
   TGLSMBASS *GLSMBASS1;
   TTimer *TISound;

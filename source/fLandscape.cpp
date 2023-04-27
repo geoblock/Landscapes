@@ -60,8 +60,8 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 		->Material->Texture->Image->LoadFromFile("snow512.jpg");
 	GLMaterialLibrary1->Materials->Items[1]
 		->Material->Texture->Image->LoadFromFile("detailmap.jpg");
-	SPMoon->Material->Texture->Image->LoadFromFile("moon.bmp");
-	SPSun->Material->Texture->Image->LoadFromFile("flare1.bmp");
+	SpriteMoon->Material->Texture->Image->LoadFromFile("moon.bmp");
+	SpriteSun->Material->Texture->Image->LoadFromFile("flare1.bmp");
 	// apply texture map scale (our heightmap size is 256)
 	TerrainRenderer1->TilesPerTexture = 256.0 / TerrainRenderer1->TileSize;
 	// Load Bitmap Font
@@ -254,8 +254,8 @@ void __fastcall TForm1::FormKeyPress(TObject* Sender, char &Key)
                 fe->FogStart =
                     -fe->FogStart; // Fog is used to make things darker
 
-                SPMoon->Visible = True;
-                SPSun->Visible = False;
+				SpriteMoon->Visible = True;
+                SpriteSun->Visible = False;
                 GLLensFlare->Visible = False;
             }
             break;
@@ -274,8 +274,8 @@ void __fastcall TForm1::FormKeyPress(TObject* Sender, char &Key)
                 fe->FogStart = -fe->FogStart;
 
                 GLSceneViewer1->Buffer->FogEnvironment->FogStart = 0;
-                SPMoon->Visible = False;
-                SPSun->Visible = True;
+				SpriteMoon->Visible = False;
+                SpriteSun->Visible = True;
             }
             break;
         case 't':
@@ -285,7 +285,7 @@ void __fastcall TForm1::FormKeyPress(TObject* Sender, char &Key)
                 SkyDome1->Options = SkyDome1->Options >> sdoTwinkle;
             break;
         case 'l':
-            GLLensFlare->Visible = (!GLLensFlare->Visible) && SPSun->Visible;
+            GLLensFlare->Visible = (!GLLensFlare->Visible) && SpriteSun->Visible;
     }
     Key = '\0';
 }
