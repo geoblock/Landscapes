@@ -71,17 +71,17 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 	// Load and setup sound samples
 	// Load and setup sound samples
 	SetCurrentDir(DataPath + "\\audio");
-    GLSoundLibrary->Samples->Add()->LoadFromFile("ChillyWind.mp3");
-    GLSoundLibrary->Samples->Add()->LoadFromFile("howl.mp3");
-    // Could've been done at design time, but then it hurts the eyes ;)
-    GLSceneViewer1->Buffer->BackgroundColor = clWhite;
+	GLSoundLibrary->Samples->Add()->LoadFromFile("ChillyWind.mp3");
+	GLSoundLibrary->Samples->Add()->LoadFromFile("howl.mp3");
+	// Could've been done at design time, but then it hurts the eyes ;)
+	GLSceneViewer1->Buffer->BackgroundColor = clWhite;
 	// Move camera starting point to an interesting hand-picked location
-    DummyCube1->Position->X = 570;
-    DummyCube1->Position->Z = -385;
-    DummyCube1->Turn(90);
-    // Initial camera height offset (controled with pageUp/pageDown)
-    FCamHeight = 10;
-
+	DummyCube1->Position->X = 570;
+	DummyCube1->Position->Z = -385;
+	DummyCube1->Turn(90);
+	// Initial camera height offset (controled with pageUp/pageDown)
+	FCamHeight = 10;
+	// Randomize position
 	randomize();
 }
 
